@@ -1,4 +1,3 @@
-
 " user interface
 set number			" show line numbers
 set showtabline=2		" always show tabline
@@ -6,7 +5,6 @@ set showtabline=2		" always show tabline
 set t_Co=256			" use 256 colors
 colorscheme wombat256mod	" theme	
 
-set textwidth=80		" maximum with of text
 syntax on			" syntax highlighting
 
 " indention
