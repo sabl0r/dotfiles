@@ -1,0 +1,32 @@
+
+# directory listing and navigation
+alias ls='ls --color=auto'
+alias ll='ls -l --color=always -h'
+alias la='ls -la --color=always -h'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# color output for grep
+alias grep='grep --colour=auto'
+
+# disable X support
+alias vi='vi -X'
+
+# run vim as root
+alias svi='sudo vi'
+
+# use login shell
+alias su='su -'
+
+# run svn diff with meld
+alias sd='svn diff --diff-cmd ~/bin/svn-diff-meld'
+
+# add all new files to svn
+alias svn-add-all-new="svn status | grep ^? | sed s/?// | xargs svn add $1"
+
+# emerge shortcuts (useful for root)
+alias e='emerge'
+alias u='emerge -avuND world'
+alias dc='emerge --depclean -av'
+
+
