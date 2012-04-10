@@ -28,7 +28,7 @@ export SVN_EDITOR=/usr/bin/vim
 export EDITOR=/usr/bin/vim
 
 # load aliases and functions
-for c in ~/.configs/{aliases,functions}
+for c in ~/.dotfiles/{aliases,functions}
 do
 	if [[ -f "$c" ]]
 	then
@@ -40,7 +40,7 @@ done
 . /etc/profile.d/bash-completion.sh
 
 # start keychain
-if [ "$TERM" = "xterm" ]; then
+if [ hash keychain 2>/dev/null ] && [ "$TERM" = "xterm" ]; then
 	keychain -q ~/.ssh/id_rsa
 	. ~/.keychain/$HOSTNAME-sh
 fi
