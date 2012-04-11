@@ -22,7 +22,8 @@ alias su='su -'
 alias sd='svn diff --diff-cmd ~/bin/svn-diff-meld'
 
 # add all new files to svn
-alias svn-add-all-new="svn status | grep ^? | sed s/?// | xargs svn add $1"
+alias svn-add-all-new="svn status | grep ^? | sed s/?// | xargs svn add"
+alias svn-del-all-missing="svn status | grep ^! | sed s/\!// | xargs svn del"
 
 # emerge shortcuts (useful for root)
 alias e='emerge'
