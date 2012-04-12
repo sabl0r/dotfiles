@@ -41,7 +41,10 @@ do
 done
 
 # load bash completion
-. /etc/profile.d/bash-completion.sh
+for b in /etc/profile.d/bash-completion.sh /etc/bash_completion
+do
+	[[ -f $b ]] && . $b
+done
 
 # start keychain
 if [ hash keychain 2>/dev/null ] && [ "$TERM" = "xterm" ]; then
