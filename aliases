@@ -1,4 +1,3 @@
-
 # directory listing and navigation
 alias ls='ls --color=auto'
 alias ll='ls -l --color=always -h'
@@ -23,6 +22,8 @@ alias sd='svn diff --diff-cmd ~/bin/svn-diff-meld'
 
 # add all new files to svn
 alias svn-add-all-new="svn status | grep ^? | sed s/?// | xargs svn add"
+
+# remove all missing files from svn
 alias svn-del-all-missing="svn status | grep ^! | sed s/\!// | xargs svn del"
 
 # emerge shortcuts (useful for root)
