@@ -31,4 +31,6 @@ alias e='emerge'
 alias u='emerge -avuND world'
 alias dc='emerge --depclean -av'
 
+# tailf mail log file
+alias tm='tailf /var/log/mail'
 
