@@ -34,5 +34,5 @@ alias dc='emerge --depclean -av'
 # tailf mail log file
 alias tm='tailf /var/log/mail'
 
-[[ -f aliases.local ]] && . ./aliases.local
+[[ -f ./aliases.local ]] && . ./aliases.local
 
