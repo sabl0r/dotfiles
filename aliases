@@ -34,5 +34,11 @@ alias dc='emerge --depclean -av'
 # tailf mail log file
 alias tm='tailf /var/log/mail'
 
+# cat and less with syntax highlighting
+alias ccat='pygmentize -f 256 -O style=native'
+function cless() {
+	pygmentize -f 256 -O style=native "$1" | less -R
+}       
+
 [[ -f ~/.dotfiles/aliases.local ]] && . ~/.dotfiles/aliases.local
 
