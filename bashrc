@@ -27,6 +27,9 @@ shopt -s globstar
 # enable spelling correction for path expansion
 shopt -s dirspell
 
+# disable command completion on empty command line
+shopt -s no_empty_cmd_completion
+
 # svn editor
 export SVN_EDITOR=/usr/bin/vim
 export EDITOR=/usr/bin/vim
