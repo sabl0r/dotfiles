@@ -50,8 +50,7 @@ do
 done
 
 # start keychain
-if [ hash keychain 2>/dev/null ] && [ "$TERM" = "xterm" ]; then
-	keychain -q ~/.ssh/id_rsa
-	. ~/.keychain/$HOSTNAME-sh
+if hash keychain 2>/dev/null && [ "$TERM" == "xterm" ]; then
+	eval `keychain --eval id_rsa`
 fi
 
