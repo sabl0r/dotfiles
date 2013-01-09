@@ -3,3 +3,5 @@ function digga(){
 	dig +nocmd "$1" any +multiline +noall +answer
 }
 
+[[ -f ~/.dotfiles/functions.local ]] && . ~/.dotfiles/functions.local
+
