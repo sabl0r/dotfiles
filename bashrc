@@ -54,3 +54,6 @@ if hash keychain 2>/dev/null && [ "$TERM" == "xterm" ]; then
 	eval `keychain --eval id_rsa`
 fi
 
+# local stuff
+[[ -f ~/.dotfiles/bashrc.local ]] && . ~/.dotfiles/bashrc.local
+
