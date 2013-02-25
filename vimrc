@@ -7,6 +7,9 @@ colorscheme wombat256mod	" theme
 
 syntax on			" syntax highlighting
 
+" encoding
+set encoding=utf-8
+
 " indention
 filetype on
 filetype plugin on		
@@ -49,4 +52,27 @@ imap <silent> <End> <C-o>g<End>
 " reselect visual block after indent / outdent
 vnoremap < <gv
 vnoremap > >gv
+
+" powerline
+set rtp+=/usr/lib64/python2.7/site-packages/powerline/bindings/vim
+set guifont=Consolas:h9
+
+" always show status line
+set laststatus=2
+
+" disable default vim mode text
+set noshowmode
+
+" disable ESC delay caused by powerline
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+" disable .netrwhist file
+let g:netrw_dirhistmax=0
 
