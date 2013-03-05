@@ -1,3 +1,5 @@
 bashrc.local
 aliases.local
 functions.local
+vim/files/swap/*
+vim/files/undo/*
