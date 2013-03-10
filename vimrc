@@ -72,7 +72,6 @@ vnoremap > >gv
 
 " powerline
 set rtp+=/usr/lib64/python2.7/site-packages/powerline/bindings/vim
-set guifont=Consolas:h9
 
 " disable ESC delay caused by powerline
 if ! has('gui_running')
