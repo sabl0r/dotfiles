@@ -24,11 +24,11 @@ do
 done
 
 # bash completion
-BASH_COMPLETION="ack base coreutils crontab eix eselect findutils gentoo git iconv make man mdadm munin-node mysqladmin postfix rsync screen ssh subversion tar tmux vim"
+BASH_COMP="ack base coreutils crontab eix eselect findutils gentoo git iconv make man mdadm munin-node mysqladmin postfix rsync screen ssh subversion tar tmux vim"
 
 [[ ! -d ~/.bash_completion.d ]] && mkdir ~/.bash_completion.d
 
-for b in $BASH_COMPLETION
+for b in $BASH_COMP
 do
 	ln -sfn /usr/share/bash-completion/$b ~/.bash_completion.d/$b
 done
