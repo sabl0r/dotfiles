@@ -52,6 +52,8 @@ done
 # start keychain
 if hash keychain 2>/dev/null && [ "$TERM" == "xterm" ]; then
 	eval `keychain --eval id_rsa`
+elif [ -x /usr/bin/ssh-pageant ]; then
+	eval $(/usr/bin/ssh-pageant -q)
 fi
 
 # local stuff
