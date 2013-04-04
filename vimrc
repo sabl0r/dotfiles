@@ -45,8 +45,12 @@ set smartcase	" ... unless they contain at least one capital letter
 
 " files
 set directory=~/.vim/files/swap		" don't save swap files to .
-set undofile						" use undo files
-set undodir=~/.vim/files/undo		" don't save undo files to .
+
+if v:version >= 703
+	set undofile						" use undo files
+	set undodir=~/.vim/files/undo		" don't save undo files to .
+endif
+
 set nobackup						" don't create backup files
 
 " bindings
@@ -85,4 +89,8 @@ endif
 
 " disable .netrwhist file
 let g:netrw_dirhistmax=0
+
+if filereadable(glob("vimrc.local"))
+	source vimrc.local
+endif
 
