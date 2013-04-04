@@ -90,7 +90,7 @@ endif
 " disable .netrwhist file
 let g:netrw_dirhistmax=0
 
-if filereadable(glob("vimrc.local"))
-	source vimrc.local
+if filereadable(glob("~/.dotfiles/vimrc.local"))
+	source ~/.dotfiles/vimrc.local
 endif
 
