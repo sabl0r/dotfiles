@@ -3,7 +3,7 @@
 git pull
 
 # create symlinks for config files in home
-for c in bashrc bash_profile vim vimrc tmux.conf gitconfig
+for c in bashrc bash_profile bash_logout vim vimrc tmux.conf gitconfig
 do
 	ln -sfn ~/.dotfiles/$c ~/.$c
 done
