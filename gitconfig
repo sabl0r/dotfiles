@@ -1,3 +1,5 @@
+[core]
+	pager = less -R
 [user]
 	email = philip.taffner@bluegfx.de
 	name = Philip Taffner
