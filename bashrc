@@ -14,6 +14,9 @@ export LC_TELEPHONE="de_DE.utf8"
 export LC_MEASUREMENT="de_DE.utf8"
 export LC_IDENTIFICATION="de_DE.utf8"
 
+# set bash history size
+export HISTSIZE=1000000
+
 # set bash prompt
 if [[ ${EUID} == 0 ]] ; then
 	PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
