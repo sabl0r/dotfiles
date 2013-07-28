@@ -11,6 +11,7 @@
 	rb = rebase
 	d = diff --word-diff
 	dc = diff --cached
+	dl = diff HEAD~1..HEAD
 	sl = stash list
 	sp = stash pop
 	unstage = reset HEAD --
