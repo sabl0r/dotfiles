@@ -24,7 +24,7 @@ do
 done
 
 # bash completion
-BASH_COMP="ack base coreutils crontab eix eselect findutils gentoo git iconv make man mdadm munin-node mysqladmin postfix rsync screen ssh subversion tar tmux vim"
+BASH_COMP="ack base coreutils crontab eix eselect findutils gentoo git gpg gpg2 iconv make man mdadm munin-node mysqladmin postfix rsync screen ssh subversion tar tmux vim"
 
 [[ ! -d ~/.bash_completion.d ]] && mkdir ~/.bash_completion.d
 
