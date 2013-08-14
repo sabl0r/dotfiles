@@ -1,4 +1,23 @@
 
+# define color variables
+cblack="\[\033[0;30m\]"
+cblue="\[\033[0;34m\]"
+cgreen="\[\033[0;32m\]"
+ccyan="\[\033[0;36m\]"
+cred="\[\033[0;31m\]"
+cpurple="\[\033[0;35m\]"
+cbrown="\[\033[0;33m\]"
+clgray="\[\033[0;37m\]"
+cdgray="\[\033[1;30m\]"
+clblue="\[\033[1;34m\]"
+clgreen="\[\033[1;32m\]"
+clcyan="\[\033[1;36m\]"
+clred="\[\033[1;31m\]"
+clpurple="\[\033[1;35m\]"
+cyellow="\[\033[1;33m\]"
+cwhite="\[\033[1;37m\]"
+cnone="\[\033[0m\]"
+
 # set locales
 export LANG="de_DE.utf8"
 export LC_CTYPE="de_DE.utf8"
@@ -16,13 +35,6 @@ export LC_IDENTIFICATION="de_DE.utf8"
 
 # set bash history size
 export HISTSIZE=1000000
-
-# set bash prompt
-if [[ ${EUID} == 0 ]] ; then
-	PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
-else
-	PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
-fi
 
 # enable recursive globbing
 shopt -s globstar
@@ -58,6 +70,68 @@ if hash keychain 2>/dev/null && [ "$TERM" == "xterm" ]; then
 elif [ -x /usr/bin/ssh-pageant ]; then
 	eval $(/usr/bin/ssh-pageant -q)
 fi
+
+# bash prompt segments
+
+# user and hostname
+function __ps1_userhost() {
+	
+	if [[ ${EUID} == 0 ]]; then
+		echo -n "$clred\h$cnone "
+	else
+		echo -n "$clgreen\u@\h$cnone "
+	fi
+
+}
+
+# current directory
+function __ps1_dir() {
+	echo -n "$clblue\w$cnone "
+}
+
+# end marker
+function __ps1_end() {
+	echo -n "$clblue\$$cnone "
+}
+
+# background jobs
+function __ps1_bgjobs() {
+	echo -n "$cnone\$(hasjobs=\$(jobs -p); echo \${hasjobs:+${cdgray}(${clred}\j${cdgray})${cnone}\ })"
+}
+
+# check if __git_ps1 function is provided by bash completion and load git-prompt otherwise
+[ "`type -t __git_ps1`" = "function" ] || . ~/.dotfiles/git-prompt.sh
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+
+# git informations
+function __ps1_git() {
+
+	# Collect some additional information to put into format string for __git_ps1
+	git_status="$(git status 2> /dev/null)"
+	branch_pattern="^# On branch ([^${IFS}]*)"
+	remote_pattern="# Your branch is (.*) of"
+	diverge_pattern="# Your branch and (.*) have diverged"
+
+	if [[ $git_status =~ $remote_pattern ]]; then
+		if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
+			remote=" $cyellow↑"
+		else
+			remote=" $cyellow↓"
+		fi
+	fi
+
+	if [[ $git_status =~ $diverge_pattern ]]; then
+		remote=" $cyellow↕"
+	fi
+
+	__git_ps1 "$cpurple(%s$remote$cpurple)$cnone "
+
+}
+
+# set bash prompt
+PROMPT_COMMAND='PS1=$(__ps1_userhost;__ps1_dir;__ps1_git;__ps1_bgjobs;__ps1_end)'
 
 # local stuff
 [[ -f ~/.dotfiles/bashrc.local ]] && . ~/.dotfiles/bashrc.local
