@@ -116,14 +116,14 @@ function __ps1_git() {
 
 	if [[ $git_status =~ $remote_pattern ]]; then
 		if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-			remote=" $cyellow↑"
+			remote=" $cyellow▲"
 		else
-			remote=" $cyellow↓"
+			remote=" $cyellow▼"
 		fi
 	fi
 
 	if [[ $git_status =~ $diverge_pattern ]]; then
-		remote=" $cyellow↕"
+		remote=" $cyellow"
 	fi
 
 	__git_ps1 "$cpurple(%s$remote$cpurple)$cnone "
