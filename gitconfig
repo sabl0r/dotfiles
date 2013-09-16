@@ -17,8 +17,8 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	aliases = "!git config -l | grep alias | cut -c 7-"
-	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
-	ll = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat --date=short
+	ls = log --pretty=format:"%C(yellow)%h\\ %ad%C(auto)%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+	ll = log --pretty=format:"%C(yellow)%h\\ %ad%C(auto)%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat --date=short
 [color]
 	ui = true
 [color "branch"]
