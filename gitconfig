@@ -19,6 +19,7 @@
 	aliases = "!git config -l | grep alias | cut -c 7-"
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%C(auto)%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
 	ll = log --pretty=format:"%C(yellow)%h\\ %ad%C(auto)%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat --date=short
+	theirs = !bash -c 'git ls-files --unmerged $1 | cut -f 2 | uniq | tee >(xargs -r git checkout --theirs --) >(xargs -r git add)' -
 [color]
 	ui = true
 [color "branch"]
