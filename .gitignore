@@ -2,3 +2,4 @@ bashrc.local
 aliases.local
 functions.local
 vimrc.local
+tmux.conf.local
