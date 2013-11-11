@@ -2,8 +2,10 @@
 alias ls='ls --color=auto'
 alias ll='ls -l --color=always -h'
 alias la='ls -la --color=always -h'
-alias ..='cd ..'
-alias ...='cd ../..'
+alias p='pushd $@ > /dev/null'
+alias o='popd > /dev/null'
+alias ..='p ..'
+alias ...='p ../..'
 
 # color output for grep
 alias grep='grep --colour=auto'
