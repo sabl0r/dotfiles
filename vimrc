@@ -55,6 +55,7 @@ set nobackup						" don't create backup files
 
 " bindings
 map <C-n> :tabnext<CR>	" ctrl + n switches to next tab
+nmap <F12> :set invnumber<CR> " toggle line numbers
 
 " keep cursor position while navigating through lines
 nmap <silent> j gj
