@@ -12,6 +12,8 @@ set scrolloff=1			" keep one line above and below current scroll position
 set sidescrolloff=5		" keep 5 columns to the left and right
 set showcmd				" show command in the last line
 set display+=lastline	" display as much as possible of the last line in a window
+set cursorline			" highlight current line
+set cursorcolumn		" highlight current column
 
 set t_Co=256				" use 256 colors
 colorscheme wombat256mod	" theme	
