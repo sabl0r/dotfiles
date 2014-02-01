@@ -9,7 +9,7 @@
 	co = checkout
 	br = branch
 	rb = rebase
-	d = diff --word-diff
+	d = -c color.diff.old='white red' -c color.diff.new='black green' diff --word-diff=color
 	dc = diff --cached
 	dl = diff HEAD~1..HEAD
 	sl = stash list
