@@ -56,8 +56,17 @@ endif
 set nobackup						" don't create backup files
 
 " bindings
-map <C-n> :tabnext<CR>	" ctrl + n switches to next tab
 nmap <F12> :set invnumber<CR> " toggle line numbers
+
+" set keycodes for PuTTY
+set <s-right>=[C
+set <s-left>=[D
+
+" tab navigation
+nnoremap <s-right> :tabnext<CR> " shift + right
+nnoremap <s-left> :tabprev<CR>  " shift + left
+nnoremap <c-n> :tabnext<CR> " ctrl + n (shift not working in tmux)
+nnoremap <c-c> :tabprev<CR> " ctrl + c (shift not working in tmux)
 
 " keep cursor position while navigating through lines
 nmap <silent> j gj
