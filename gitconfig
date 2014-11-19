@@ -42,3 +42,5 @@
 	default = simple
 [rerere]
 	enabled = true
+[diff]
+	algorithm = patience
