@@ -126,3 +126,10 @@ if has("autocmd") && exists('##InsertLeave')
     autocmd InsertLeave * set nopaste
 endif
 
+
+" Set color definition for vim-gitgutter signs
+hi GitGutterAdd ctermbg=234 ctermfg=darkgreen
+hi GitGutterChange ctermbg=234 ctermfg=yellow
+hi GitGutterDelete ctermbg=234 ctermfg=darkred
+hi GitGutterChangeDelete ctermbg=234 ctermfg=yellow
+
