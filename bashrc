@@ -35,6 +35,10 @@ export LC_IDENTIFICATION="de_DE.utf8"
 
 # set bash history size
 export HISTSIZE=1000000
+export HISTFILESIZE=$HISTSIZE
+
+# append to the Bash history file, rather than overwriting it
+shopt -s histappend
 
 # enable recursive globbing
 shopt -s globstar
@@ -44,6 +48,9 @@ shopt -s dirspell
 
 # disable command completion on empty command line
 shopt -s no_empty_cmd_completion
+
+# check the window size after each command
+shopt -s checkwinsize
 
 # svn editor
 export SVN_EDITOR=/usr/bin/vim
@@ -132,6 +139,10 @@ function __ps1_git() {
 
 # set bash prompt
 PROMPT_COMMAND='PS1=$(__ps1_userhost;__ps1_dir;__ps1_git;__ps1_bgjobs;__ps1_end)'
+
+# Make new shells get the history lines from all previous
+# shells instead of the default "last window closed" history
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # local stuff
 [[ -f ~/.dotfiles/bashrc.local ]] && . ~/.dotfiles/bashrc.local
