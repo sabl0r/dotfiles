@@ -5,7 +5,7 @@ git submodule init
 git submodule update
 
 # create symlinks for config files in home
-for c in bashrc bash_profile bash_logout vim vimrc tmux.conf gitconfig
+for c in bashrc bash_profile bash_logout vim vimrc tmux.conf gitconfig curlrc
 do
 	ln -sfn ~/.dotfiles/$c ~/.$c
 done
