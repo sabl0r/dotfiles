@@ -9,6 +9,7 @@ alias ...='p ../..'
 
 # color output for grep
 alias grep='grep --colour=auto'
+alias zgrep='zgrep --colour=always'
 
 # disable X support
 alias vi='vi -X'
