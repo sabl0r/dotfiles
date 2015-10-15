@@ -7,6 +7,7 @@ call vundle#begin()
 " Vim plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
+Bundle 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 
@@ -145,4 +146,7 @@ hi GitGutterAdd ctermbg=234 ctermfg=darkgreen
 hi GitGutterChange ctermbg=234 ctermfg=yellow
 hi GitGutterDelete ctermbg=234 ctermfg=darkred
 hi GitGutterChangeDelete ctermbg=234 ctermfg=yellow
+
+" Remove trailing whitespaces
+nnoremap <Leader>r :StripWhitespace<CR>
 
