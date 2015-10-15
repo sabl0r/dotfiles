@@ -1,5 +1,14 @@
-" load pathogen
-execute pathogen#infect()
+" load Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vim plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
 
 " user interface
 set number				" show line numbers
