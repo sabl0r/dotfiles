@@ -56,6 +56,10 @@ endif
 set nobackup						" don't create backup files
 
 " bindings
+
+" Set leader to space instead of \
+let mapleader = " "
+
 nmap <F12> :set invnumber<CR> " toggle line numbers
 
 " set keycodes for PuTTY
