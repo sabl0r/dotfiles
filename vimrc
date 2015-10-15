@@ -14,6 +14,7 @@ set showcmd				" show command in the last line
 set display+=lastline	" display as much as possible of the last line in a window
 set cursorline			" highlight current line
 set cursorcolumn		" highlight current column
+set hidden				" enable switching from modified but not yet saved buffers
 
 set t_Co=256				" use 256 colors
 colorscheme wombat256mod	" theme	
@@ -129,7 +130,6 @@ endif
 if has("autocmd") && exists('##InsertLeave')
     autocmd InsertLeave * set nopaste
 endif
-
 
 " Set color definition for vim-gitgutter signs
 hi GitGutterAdd ctermbg=234 ctermfg=darkgreen
