@@ -10,6 +10,9 @@ do
 	ln -sfn ~/.dotfiles/$c ~/.$c
 done
 
+# install vim plugins via Vundle
+vim +PluginInstall +qall
+
 # powerline
 POWERLINE_USER_PATH=~/.config/powerline
 POWERLINE_DIRS=themes/tmux
