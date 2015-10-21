@@ -71,6 +71,8 @@ set nobackup						" don't create backup files
 " Set leader to space instead of \
 let mapleader = " "
 
+nnoremap <CR> :noh<CR><CR> " Clear highlighted search results
+
 nmap <F12> :set invnumber<CR> " toggle line numbers
 
 " set keycodes for PuTTY
