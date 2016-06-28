@@ -50,7 +50,10 @@ alias tm='tailf /var/log/mail'
 alias ccat='pygmentize -g -f 256 -O style=native'
 function cless() {
 	pygmentize -g -f 256 -O style=native "$1" | less -R
-}       
+}
+
+# quickly show HTTPS certificate details
+alias check_certificate='sslscan --show-certificate --no-ciphersuites --no-compression --no-heartbleed --no-renegotiation'
 
 [[ -f ~/.dotfiles/aliases.local ]] && . ~/.dotfiles/aliases.local
 
