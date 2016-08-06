@@ -40,6 +40,7 @@ alias svn-del-all-missing="svn status | grep ^! | sed s/\!// | xargs svn del"
 
 # emerge shortcuts (useful for root)
 alias e='emerge'
+alias s='layman -S; eix-sync'
 alias u='emerge -avuND world'
 alias dc='emerge --depclean -av'
 
