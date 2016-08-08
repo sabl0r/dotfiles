@@ -7,7 +7,7 @@ call vundle#begin()
 " Vim plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
-Bundle 'ntpeters/vim-better-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 
