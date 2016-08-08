@@ -11,7 +11,7 @@ do
 done
 
 # install vim plugins via Vundle
-vim +PluginInstall +qall
+vim +PluginInstall +PluginUpdate +qall
 
 # powerline
 POWERLINE_USER_PATH=~/.config/powerline
