@@ -20,6 +20,9 @@ alias svi='sudo vi'
 # use login shell
 alias su='su -'
 
+# colored unified diff
+alias diff='colordiff -u'
+
 # always show human readable values
 alias df='df -h'
 
