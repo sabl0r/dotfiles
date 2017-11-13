@@ -47,8 +47,11 @@ alias s='layman -S; eix-sync'
 alias u='emerge -avuND world'
 alias dc='emerge --depclean -av'
 
+# tailf was removed in util-linux 2.30
+alias tailf='tail -f'
+
 # tailf mail log file
-alias tm='tailf /var/log/mail'
+alias tm='tail -f /var/log/mail'
 
 # cat and less with syntax highlighting
 alias ccat='pygmentize -g -f 256 -O style=native'
