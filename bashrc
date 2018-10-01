@@ -82,7 +82,7 @@ fi
 
 # user and hostname
 function __ps1_userhost() {
-	
+
 	if [[ ${EUID} == 0 ]]; then
 		echo -n "$clred\h$cnone "
 	else
@@ -117,10 +117,10 @@ function __ps1_git() {
 
 	# Collect some additional information to put into format string for __git_ps1
 	git_status="$(git status 2> /dev/null)"
-	branch_pattern="^# On branch ([^${IFS}]*)"
-	remote_pattern="# Your branch is (.*) of"
-	diverge_pattern="# Your branch and (.*) have diverged"
+	remote_pattern="Your branch is (behind|ahead)"
+	diverge_pattern="Your branch and (.*) have diverged"
 
+	remote=""
 	if [[ $git_status =~ $remote_pattern ]]; then
 		if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
 			remote=" $cyellow▲"
