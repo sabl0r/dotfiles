@@ -28,7 +28,7 @@ set cursorcolumn		" highlight current column
 set hidden				" enable switching from modified but not yet saved buffers
 
 set t_Co=256				" use 256 colors
-colorscheme wombat256mod	" theme	
+colorscheme wombat256mod	" theme
 
 syntax on	" syntax highlighting
 
@@ -38,7 +38,7 @@ set autoread	" auto reload changed files
 
 " indention
 filetype on
-filetype plugin on		
+filetype plugin on
 filetype indent on
 set autoindent
 
