@@ -10,6 +10,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'rhlobo/vim-super-retab'
 Plugin 'wincent/command-t'
+Plugin 'preservim/nerdcommenter'
 
 call vundle#end()
 
@@ -162,3 +163,6 @@ let g:CommandTAcceptSelectionTabMap=['<CR>', '<C-t>']
 let g:CommandTFileScanner='git'
 let g:CommandTWildIgnore=&wildignore . ',*.jpg,*.png,*.gif,*.ico,*.woff,*.woff2,*.ttf'
 let g:CommandTMatchWindowReverse=0
+
+" NERD Commenter
+let g:NERDCompactSexyComs=1
