@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'rhlobo/vim-super-retab'
+Plugin 'wincent/command-t'
 
 call vundle#end()
 
@@ -155,3 +156,9 @@ hi GitGutterChangeDelete ctermbg=234 ctermfg=yellow
 " Remove trailing whitespaces
 nnoremap <Leader>r :StripWhitespace<CR>
 
+" Command-T
+nmap <silent> <Leader>l <Plug>(CommandTLine)
+let g:CommandTAcceptSelectionTabMap=['<CR>', '<C-t>']
+let g:CommandTFileScanner='git'
+let g:CommandTWildIgnore=&wildignore . ',*.jpg,*.png,*.gif,*.ico,*.woff,*.woff2,*.ttf'
+let g:CommandTMatchWindowReverse=0
