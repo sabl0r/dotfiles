@@ -28,15 +28,5 @@ do
 	ln -sfn ~/.dotfiles/powerline/$c "$POWERLINE_USER_PATH/$c"
 done
 
-# bash completion
-BASH_COMP="ack base coreutils crontab eix eselect findutils gentoo git git-prompt gpg gpg2 iconv make man mdadm munin-node mysqladmin openssl postfix rsync screen ssh subversion tar tmux vim"
-
-[[ ! -d ~/.bash_completion.d ]] && mkdir ~/.bash_completion.d
-
-for b in $BASH_COMP
-do
-	ln -sfn /usr/share/bash-completion/$b ~/.bash_completion.d/$b
-done
-
 . ~/.bashrc
 

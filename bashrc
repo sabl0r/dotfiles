@@ -65,12 +65,6 @@ do
 	fi
 done
 
-# load bash completion
-for b in /etc/profile.d/bash-completion.sh /etc/bash_completion
-do
-	[[ -f $b ]] && . $b
-done
-
 # start keychain
 if [[ -f ~/.ssh/id_rsa ]] && hash keychain 2>/dev/null && [ "$TERM" == "xterm" ]; then
 	eval `keychain --eval id_rsa`
