@@ -105,7 +105,9 @@ vnoremap < <gv
 vnoremap > >gv
 
 " powerline
-set rtp+=/usr/lib64/python2.7/site-packages/powerline/bindings/vim
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " disable ESC delay caused by powerline
 if ! has('gui_running')
