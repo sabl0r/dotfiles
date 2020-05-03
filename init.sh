@@ -13,6 +13,9 @@ done
 # install vim plugins via Vundle
 vim +PluginInstall +PluginUpdate +qall
 
+# install tmux plugins via tpm
+tmux/plugins/tpm/bin/install_plugins
+
 # powerline
 POWERLINE_USER_PATH=~/.config/powerline
 POWERLINE_DIRS=themes/tmux
