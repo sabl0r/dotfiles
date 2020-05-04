@@ -11,6 +11,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'rhlobo/vim-super-retab'
 Plugin 'wincent/command-t'
 Plugin 'preservim/nerdcommenter'
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
 
@@ -166,3 +167,14 @@ let g:CommandTMatchWindowReverse=0
 
 " NERD Commenter
 let g:NERDCompactSexyComs=1
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_javascript_checkers=["eslint"]
+let g:syntastic_javascript_eslint_args = "--no-eslintrc"
