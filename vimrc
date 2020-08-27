@@ -12,6 +12,7 @@ Plugin 'rhlobo/vim-super-retab'
 Plugin 'wincent/command-t'
 Plugin 'preservim/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 
