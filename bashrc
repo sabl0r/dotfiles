@@ -52,6 +52,9 @@ shopt -s no_empty_cmd_completion
 # check the window size after each command
 shopt -s checkwinsize
 
+# Add cargo binaries to the PATH
+export PATH="$PATH:~/.cargo/bin"
+
 # svn editor
 export SVN_EDITOR=/usr/bin/vim
 export EDITOR=/usr/bin/vim
