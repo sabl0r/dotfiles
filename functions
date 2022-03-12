@@ -3,5 +3,9 @@ function digga(){
 	dig +nocmd "$1" any +multiline +noall +answer
 }
 
+function dogga(){
+	dog "$1" A AAAA NS MX TXT SRV
+}
+
 [[ -f ~/.dotfiles/functions.local ]] && . ~/.dotfiles/functions.local
 
