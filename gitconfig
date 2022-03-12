@@ -1,5 +1,5 @@
 [core]
-	pager = less -R
+	pager = delta
 [user]
 	email = philip.taffner@bluegfx.de
 	name = Philip Taffner
@@ -45,3 +45,12 @@
 	enabled = true
 [diff]
 	algorithm = patience
+	colorMoved = default
+[interactive]
+	diffFilter = delta --color-only
+[merge]
+	conflictstyle = diff3
+[delta]
+	line-numbers = true
+	side-by-side = true
+	syntax-theme = Monokai Extended

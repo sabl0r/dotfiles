@@ -16,19 +16,15 @@ vim +PluginInstall +PluginUpdate +qall
 # install tmux plugins via tpm
 tmux/plugins/tpm/bin/install_plugins
 
-# powerline
-POWERLINE_USER_PATH=~/.config/powerline
-POWERLINE_DIRS=themes/tmux
-POWERLINE_CONFIGS=themes/tmux/default.json
-
-for d in $POWERLINE_DIRS
+# Create symlinks in ~/.config
+for c in bat powerline
 do
-	[[ ! -d "$POWERLINE_USER_PATH/$d" ]] && mkdir -p "$POWERLINE_USER_PATH/$d"
-done
-
-for c in $POWERLINE_CONFIGS
-do
-	ln -sfn ~/.dotfiles/powerline/$c "$POWERLINE_USER_PATH/$c"
+	for f in $(find ${c} -type f)
+	do
+		target_dir=~/.config/$(dirname ${f})
+		[[ ! -d ${target_dir} ]] && mkdir -p ${target_dir}
+		ln -sfn ~/.dotfiles/${f} ${target_dir}/$(basename ${f})
+	done
 done
 
 . ~/.bashrc
