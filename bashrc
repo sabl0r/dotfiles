@@ -34,7 +34,7 @@ export LC_MEASUREMENT="de_DE.utf8"
 export LC_IDENTIFICATION="de_DE.utf8"
 
 # set bash history size
-export HISTSIZE=1000000
+export HISTSIZE=-1
 export HISTFILESIZE=$HISTSIZE
 
 # append to the Bash history file, rather than overwriting it
