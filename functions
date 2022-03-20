@@ -7,5 +7,9 @@ function dogga(){
 	dog "$1" A AAAA NS MX TXT SRV
 }
 
+function docker_shell(){
+	docker exec -it $1 bash
+}
+
 [[ -f ~/.dotfiles/functions.local ]] && . ~/.dotfiles/functions.local
 

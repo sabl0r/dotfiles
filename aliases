@@ -62,5 +62,9 @@ function cless() {
 # quickly show HTTPS certificate details
 alias check_certificate='sslscan --show-certificate --no-ciphersuites --no-compression --no-heartbleed --no-renegotiation'
 
+# Remove all docker containers
+alias docker_stop_all_containers='docker stop $(docker ps -aq)'
+alias docker_remove_all_containers='docker rm $(docker ps -aq)'
+
 [[ -f ~/.dotfiles/aliases.local ]] && . ~/.dotfiles/aliases.local
 
