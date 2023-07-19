@@ -9,10 +9,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'rhlobo/vim-super-retab'
-Plugin 'wincent/command-t'
 Plugin 'preservim/nerdcommenter'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'dense-analysis/ale'
 
 call vundle#end()
 
@@ -159,23 +158,6 @@ hi GitGutterChangeDelete ctermbg=234 ctermfg=yellow
 " Remove trailing whitespaces
 nnoremap <Leader>r :StripWhitespace<CR>
 
-" Command-T
-nmap <silent> <Leader>l <Plug>(CommandTLine)
-let g:CommandTAcceptSelectionTabMap=['<CR>', '<C-t>']
-let g:CommandTFileScanner='git'
-let g:CommandTWildIgnore=&wildignore . ',*.jpg,*.png,*.gif,*.ico,*.woff,*.woff2,*.ttf'
-let g:CommandTMatchWindowReverse=0
-
 " NERD Commenter
 let g:NERDCompactSexyComs=1
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_javascript_checkers=["eslint"]
-let g:syntastic_javascript_eslint_args = "--no-eslintrc"
