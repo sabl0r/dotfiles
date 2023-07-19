@@ -11,7 +11,7 @@ do
 done
 
 # install vim plugins via Vundle
-vim +PluginInstall +PluginUpdate +qall
+vim +PluginInstall +PluginUpdate +PluginClean +qall
 
 # install tmux plugins via tpm
 tmux/plugins/tpm/bin/install_plugins
