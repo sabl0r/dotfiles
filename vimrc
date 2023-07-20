@@ -13,6 +13,8 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'nordtheme/vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -108,10 +110,9 @@ imap <silent> <End> <C-o>g<End>
 vnoremap < <gv
 vnoremap > >gv
 
-" powerline
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " disable ESC delay caused by powerline
 if ! has('gui_running')
@@ -155,4 +156,12 @@ nnoremap <Leader>r :StripWhitespace<CR>
 
 " NERD Commenter
 let g:NERDCompactSexyComs=1
+
+" ALE
+let g:airline#extensions#ale#enabled = 1
+"let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\	'php': ['php'],
+\	'javascript': []
+\}
 
