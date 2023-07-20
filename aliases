@@ -53,6 +53,9 @@ alias tailf='tail -f'
 # tailf mail log file
 alias tm='tail -f /var/log/mail'
 
+# search also for hidden and ignored files/dirs
+alias fda='fd -IH'
+
 # cat and less with syntax highlighting
 alias ccat='pygmentize -g -f 256 -O style=native'
 function cless() {
