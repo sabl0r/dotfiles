@@ -68,6 +68,9 @@ do
 	fi
 done
 
+# dircolors
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+
 # start keychain
 if [[ -f ~/.ssh/id_rsa ]] && hash keychain 2>/dev/null && [ "$TERM" == "xterm" ]; then
 	eval `keychain --eval id_rsa`

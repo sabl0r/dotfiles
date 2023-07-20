@@ -12,6 +12,7 @@ Plugin 'rhlobo/vim-super-retab'
 Plugin 'preservim/nerdcommenter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'dense-analysis/ale'
+Plugin 'nordtheme/vim'
 
 call vundle#end()
 
@@ -31,7 +32,7 @@ set cursorcolumn		" highlight current column
 set hidden				" enable switching from modified but not yet saved buffers
 
 set t_Co=256				" use 256 colors
-colorscheme wombat256mod	" theme
+colorscheme nord		" theme
 
 syntax on	" syntax highlighting
 
@@ -148,12 +149,6 @@ endif
 if has("autocmd") && exists('##InsertLeave')
     autocmd InsertLeave * set nopaste
 endif
-
-" Set color definition for vim-gitgutter signs
-hi GitGutterAdd ctermbg=234 ctermfg=darkgreen
-hi GitGutterChange ctermbg=234 ctermfg=yellow
-hi GitGutterDelete ctermbg=234 ctermfg=darkred
-hi GitGutterChangeDelete ctermbg=234 ctermfg=yellow
 
 " Remove trailing whitespaces
 nnoremap <Leader>r :StripWhitespace<CR>

@@ -3,3 +3,4 @@ aliases.local
 functions.local
 vimrc.local
 tmux.conf.local
+dir_colors
