@@ -20,7 +20,7 @@ vim +PluginInstall +PluginUpdate +PluginClean +qall
 tmux/plugins/tpm/bin/install_plugins
 
 # Create symlinks in ~/.config
-for c in bat powerline
+for c in bat
 do
 	for f in $(find ${c} -type f)
 	do
