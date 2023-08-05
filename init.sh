@@ -4,6 +4,11 @@ git pull
 git submodule init
 git submodule update
 
+# Build powerline-go
+cd powerline-go
+go build
+cd ..
+
 # Download nordtheme dircolors
 curl -o ~/.dotfiles/dir_colors https://raw.githubusercontent.com/nordtheme/dircolors/develop/src/dir_colors
 

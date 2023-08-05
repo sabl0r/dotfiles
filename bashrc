@@ -138,7 +138,16 @@ function __ps1_git() {
 }
 
 # set bash prompt
-PROMPT_COMMAND='PS1=$(__ps1_userhost;__ps1_dir;__ps1_git;__ps1_bgjobs;__ps1_end)'
+#PROMPT_COMMAND='PS1=$(__ps1_userhost;__ps1_dir;__ps1_git;__ps1_bgjobs;__ps1_end)'
+POWERLINE_PATH=~/.dotfiles/powerline-go/powerline-go
+
+function _update_ps1() {
+	PS1="$(${POWERLINE_PATH} -error $? -jobs $(jobs -p | wc -l) -numeric-exit-codes -hostname-only-if-ssh -modules user,host,ssh,cwd,perms,git,jobs,exit,root -theme gruvbox)"
+}
+
+if [ "$TERM" != "linux" ] && [ -x "${POWERLINE_PATH}" ]; then
+	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
