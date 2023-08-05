@@ -142,7 +142,7 @@ function __ps1_git() {
 POWERLINE_PATH=~/.dotfiles/powerline-go/powerline-go
 
 function _update_ps1() {
-	PS1="$(${POWERLINE_PATH} -error $? -jobs $(jobs -p | wc -l) -numeric-exit-codes -hostname-only-if-ssh -modules user,host,ssh,cwd,perms,git,jobs,exit,root -theme gruvbox)"
+	PS1="$(${POWERLINE_PATH} -error $? -jobs $(jobs -p | wc -l) -numeric-exit-codes -hostname-only-if-ssh -modules user,host,cwd,perms,git,jobs,exit,root -theme gruvbox)"
 }
 
 if [ "$TERM" != "linux" ] && [ -x "${POWERLINE_PATH}" ]; then
