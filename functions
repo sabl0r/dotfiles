@@ -11,5 +11,16 @@ function docker_shell(){
 	docker exec -it $1 bash
 }
 
+function dua(){
+	DIR="."
+
+	if [ -n "$1" ]
+	then
+		DIR="$1"
+	fi
+
+	(shopt -s dotglob; du -sch "$DIR" | sort -h)
+}
+
 [[ -f ~/.dotfiles/functions.local ]] && . ~/.dotfiles/functions.local
 
